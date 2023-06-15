@@ -1,0 +1,20 @@
+<div *ngIf="modal_wind" class="modal">
+  <div class="modal-content">
+    <ul>
+      <li *ngFor="let item of set">
+        <p><strong>Name:</strong>{{ item.name }}</p>
+        <p><strong>Price:</strong>{{ item.price }}$</p>
+        <p><strong>Count:</strong>{{ item.count }}</p>
+        <p><strong>Total Price:</strong>{{ item.count * item.price }}$</p>
+        <div>
+          <button (click)="plus(item)">+</button>
+          <button (click)="minus(item)">-</button>
+        </div>
+      </li>
+    </ul>
+    <div class="c">
+      <button (click)="send()">Send</button>
+      <button (click)="cancel(modal_wind)">cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<app-header [modal]="modal" (boolEmitter)="boolEmitter($event)"></app-header>
+<h1 class="title">All Category</h1>
+<app-basket
+  [set]="set"
+  [modal_wind]="modal_wind"
+  (modalView)="modalView($event)"
+  (plusEmitter)="plusEmitter($event)"
+  (minusEmitter)="minusEmitter($event)"
+></app-basket>
+<section>
+  <div class="content">
+    <div class="block-content" *ngFor="let item of array">
+      <img
+        [src]="item.image"
+        (click)="korzina(item)"
+        width="180"
+        height="180"
+        alt=""
+      />
+      <div>
+        <p>Name:{{ item.name }}</p>
+        <p>Char:{{ item.char }}</p>
+        <p>Price:{{ item.price }}$</p>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
